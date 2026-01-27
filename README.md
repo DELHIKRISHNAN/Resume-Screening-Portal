@@ -469,13 +469,6 @@ python train_model.py --epochs 4
 python visualize_dataset.py
 ```
 
----
-
-## 📝 License
-
-MIT License
-
----
 
 **Built with Django and Sentence-BERT**
 
