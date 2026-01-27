@@ -1,0 +1,17 @@
+Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years

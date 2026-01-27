@@ -1,0 +1,21 @@
+Backend Developer Resume
+
+SUMMARY
+Backend Developer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+Python, Django, PostgreSQL, REST API, Docker
+
+EXPERIENCE
+Backend Developer | Tech Company | 5 years
+- Led development of E-commerce platform
+- Contributed to Payment gateway integration
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+E-commerce platform: Built using Python and Django
+Payment gateway integration: Implemented with PostgreSQL and REST API

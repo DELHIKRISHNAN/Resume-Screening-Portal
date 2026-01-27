@@ -1,0 +1,1481 @@
+id,resume_text,jd_text,score,label,resume_role,jd_title
+neg_13,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","Backend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Backend Developer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, Django, PostgreSQL, REST API
+
+PREFERRED SKILLS
+Docker, Redis, Celery
+
+RESPONSIBILITIES
+- Design APIs - Database optimization - Code reviews
+
+QUALIFICATIONS
+['BS in Computer Science or related field']
+Required experience: 3-5 years",17.5,0,Data Analyst,Backend Developer
+pos_9,"Full Stack Developer Resume
+
+SUMMARY
+Full Stack Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Software Engineering
+
+SKILLS
+JavaScript, React, Node.js, MongoDB, AWS
+
+EXPERIENCE
+Full Stack Developer | Tech Company | 3 years
+- Led development of Social media dashboard
+- Contributed to Real-time chat application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Social media dashboard: Built using JavaScript and React
+Real-time chat application: Implemented with Node.js and MongoDB","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",80.0,1,Full Stack Developer,Full Stack Developer
+pos_12,"Mobile Developer Resume
+
+SUMMARY
+Mobile Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Information Technology
+
+SKILLS
+React Native, Flutter, iOS, Android, Firebase
+
+EXPERIENCE
+Mobile Developer | Tech Company | 3 years
+- Led development of Fitness tracking app
+- Contributed to Food delivery application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Fitness tracking app: Built using React Native and Flutter
+Food delivery application: Implemented with iOS and Android","Mobile Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Mobile Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+React Native, iOS, Android
+
+PREFERRED SKILLS
+Flutter, Firebase, Mobile UI/UX
+
+RESPONSIBILITIES
+- Develop mobile apps - App store deployment
+
+QUALIFICATIONS
+['BS in IT or Computer Science']
+Required experience: 2-4 years",90.0,1,Mobile Developer,Mobile Developer
+pos_10,"Machine Learning Engineer Resume
+
+SUMMARY
+Machine Learning Engineer with 4 years of experience in software development.
+
+EDUCATION
+MS Data Science
+
+SKILLS
+Python, TensorFlow, PyTorch, scikit-learn, Pandas
+
+EXPERIENCE
+Machine Learning Engineer | Tech Company | 4 years
+- Led development of Recommendation system
+- Contributed to Image classification model
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Recommendation system: Built using Python and TensorFlow
+Image classification model: Implemented with PyTorch and scikit-learn","Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years",52.5,1,Machine Learning Engineer,Machine Learning Engineer
+pos_1,"Full Stack Developer Resume
+
+SUMMARY
+Full Stack Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Software Engineering
+
+SKILLS
+JavaScript, React, Node.js, MongoDB, AWS
+
+EXPERIENCE
+Full Stack Developer | Tech Company | 3 years
+- Led development of Social media dashboard
+- Contributed to Real-time chat application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Social media dashboard: Built using JavaScript and React
+Real-time chat application: Implemented with Node.js and MongoDB","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",80.0,1,Full Stack Developer,Full Stack Developer
+pos_14,"Frontend Developer Resume
+
+SUMMARY
+Frontend Developer with 2 years of experience in software development.
+
+EDUCATION
+BS Web Design
+
+SKILLS
+HTML, CSS, JavaScript, Vue.js, Figma
+
+EXPERIENCE
+Frontend Developer | Tech Company | 2 years
+- Led development of Corporate website redesign
+- Contributed to Interactive portfolio
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Corporate website redesign: Built using HTML and CSS
+Interactive portfolio: Implemented with JavaScript and Vue.js","Frontend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Frontend Developer with 2-3 years of experience.
+
+REQUIRED SKILLS
+HTML, CSS, JavaScript, React
+
+PREFERRED SKILLS
+Vue.js, TypeScript, Responsive Design
+
+RESPONSIBILITIES
+- Build user interfaces - Optimize web performance
+
+QUALIFICATIONS
+['BS in Web Design or Computer Science']
+Required experience: 2-3 years",62.5,1,Frontend Developer,Frontend Developer
+neg_9,"Full Stack Developer Resume
+
+SUMMARY
+Full Stack Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Software Engineering
+
+SKILLS
+JavaScript, React, Node.js, MongoDB, AWS
+
+EXPERIENCE
+Full Stack Developer | Tech Company | 3 years
+- Led development of Social media dashboard
+- Contributed to Real-time chat application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Social media dashboard: Built using JavaScript and React
+Real-time chat application: Implemented with Node.js and MongoDB","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",17.5,0,Full Stack Developer,DevOps Engineer
+neg_1,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",0.0,0,Data Analyst,Full Stack Developer
+pos_13,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","Data Analyst Position
+
+ABOUT THE ROLE
+We are seeking a talented Data Analyst with 1-3 years of experience.
+
+REQUIRED SKILLS
+SQL, Tableau, Excel, Python
+
+PREFERRED SKILLS
+Power BI, Statistics, Data Visualization
+
+RESPONSIBILITIES
+- Create dashboards - Analyze business data
+
+QUALIFICATIONS
+['BS in Business Analytics or Statistics']
+Required experience: 1-3 years",80.0,1,Data Analyst,Data Analyst
+neg_16,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",0.0,0,Senior Java Developer,Full Stack Developer
+pos_16,"Backend Developer Resume
+
+SUMMARY
+Backend Developer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+Python, Django, PostgreSQL, REST API, Docker
+
+EXPERIENCE
+Backend Developer | Tech Company | 5 years
+- Led development of E-commerce platform
+- Contributed to Payment gateway integration
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+E-commerce platform: Built using Python and Django
+Payment gateway integration: Implemented with PostgreSQL and REST API","Backend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Backend Developer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, Django, PostgreSQL, REST API
+
+PREFERRED SKILLS
+Docker, Redis, Celery
+
+RESPONSIBILITIES
+- Design APIs - Database optimization - Code reviews
+
+QUALIFICATIONS
+['BS in Computer Science or related field']
+Required experience: 3-5 years",80.0,1,Backend Developer,Backend Developer
+neg_7,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",0.0,0,Data Analyst,DevOps Engineer
+neg_12,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",17.5,0,Senior Java Developer,DevOps Engineer
+neg_4,"Mobile Developer Resume
+
+SUMMARY
+Mobile Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Information Technology
+
+SKILLS
+React Native, Flutter, iOS, Android, Firebase
+
+EXPERIENCE
+Mobile Developer | Tech Company | 3 years
+- Led development of Fitness tracking app
+- Contributed to Food delivery application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Fitness tracking app: Built using React Native and Flutter
+Food delivery application: Implemented with iOS and Android","Backend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Backend Developer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, Django, PostgreSQL, REST API
+
+PREFERRED SKILLS
+Docker, Redis, Celery
+
+RESPONSIBILITIES
+- Design APIs - Database optimization - Code reviews
+
+QUALIFICATIONS
+['BS in Computer Science or related field']
+Required experience: 3-5 years",0.0,0,Mobile Developer,Backend Developer
+neg_15,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",0.0,0,Data Analyst,Senior Java Developer
+neg_19,"DevOps Engineer Resume
+
+SUMMARY
+DevOps Engineer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+AWS, Terraform, Jenkins, Docker, Kubernetes
+
+EXPERIENCE
+DevOps Engineer | Tech Company | 5 years
+- Led development of CI/CD pipeline automation
+- Contributed to Infrastructure as code
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+CI/CD pipeline automation: Built using AWS and Terraform
+Infrastructure as code: Implemented with Jenkins and Docker","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",20.0,0,DevOps Engineer,Senior Java Developer
+neg_8,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",0.0,0,Senior Java Developer,Full Stack Developer
+neg_18,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years",17.5,0,Data Analyst,Machine Learning Engineer
+neg_10,"Mobile Developer Resume
+
+SUMMARY
+Mobile Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Information Technology
+
+SKILLS
+React Native, Flutter, iOS, Android, Firebase
+
+EXPERIENCE
+Mobile Developer | Tech Company | 3 years
+- Led development of Fitness tracking app
+- Contributed to Food delivery application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Fitness tracking app: Built using React Native and Flutter
+Food delivery application: Implemented with iOS and Android","Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years",0.0,0,Mobile Developer,Machine Learning Engineer
+pos_11,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",80.0,1,Senior Java Developer,Senior Java Developer
+pos_7,"DevOps Engineer Resume
+
+SUMMARY
+DevOps Engineer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+AWS, Terraform, Jenkins, Docker, Kubernetes
+
+EXPERIENCE
+DevOps Engineer | Tech Company | 5 years
+- Led development of CI/CD pipeline automation
+- Contributed to Infrastructure as code
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+CI/CD pipeline automation: Built using AWS and Terraform
+Infrastructure as code: Implemented with Jenkins and Docker","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",72.5,1,DevOps Engineer,DevOps Engineer
+neg_0,"Frontend Developer Resume
+
+SUMMARY
+Frontend Developer with 2 years of experience in software development.
+
+EDUCATION
+BS Web Design
+
+SKILLS
+HTML, CSS, JavaScript, Vue.js, Figma
+
+EXPERIENCE
+Frontend Developer | Tech Company | 2 years
+- Led development of Corporate website redesign
+- Contributed to Interactive portfolio
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Corporate website redesign: Built using HTML and CSS
+Interactive portfolio: Implemented with JavaScript and Vue.js","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",0.0,0,Frontend Developer,Senior Java Developer
+pos_3,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",80.0,1,Senior Java Developer,Senior Java Developer
+pos_5,"Data Analyst Resume
+
+SUMMARY
+Data Analyst with 2 years of experience in software development.
+
+EDUCATION
+BS Business Analytics
+
+SKILLS
+Tableau, Power BI, SQL, Python, Excel
+
+EXPERIENCE
+Data Analyst | Tech Company | 2 years
+- Led development of Sales dashboard
+- Contributed to Customer segmentation analysis
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Sales dashboard: Built using Tableau and Power BI
+Customer segmentation analysis: Implemented with SQL and Python","Data Analyst Position
+
+ABOUT THE ROLE
+We are seeking a talented Data Analyst with 1-3 years of experience.
+
+REQUIRED SKILLS
+SQL, Tableau, Excel, Python
+
+PREFERRED SKILLS
+Power BI, Statistics, Data Visualization
+
+RESPONSIBILITIES
+- Create dashboards - Analyze business data
+
+QUALIFICATIONS
+['BS in Business Analytics or Statistics']
+Required experience: 1-3 years",80.0,1,Data Analyst,Data Analyst
+pos_0,"Backend Developer Resume
+
+SUMMARY
+Backend Developer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+Python, Django, PostgreSQL, REST API, Docker
+
+EXPERIENCE
+Backend Developer | Tech Company | 5 years
+- Led development of E-commerce platform
+- Contributed to Payment gateway integration
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+E-commerce platform: Built using Python and Django
+Payment gateway integration: Implemented with PostgreSQL and REST API","Backend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Backend Developer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, Django, PostgreSQL, REST API
+
+PREFERRED SKILLS
+Docker, Redis, Celery
+
+RESPONSIBILITIES
+- Design APIs - Database optimization - Code reviews
+
+QUALIFICATIONS
+['BS in Computer Science or related field']
+Required experience: 3-5 years",80.0,1,Backend Developer,Backend Developer
+neg_11,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",17.5,0,Senior Java Developer,DevOps Engineer
+pos_18,"Machine Learning Engineer Resume
+
+SUMMARY
+Machine Learning Engineer with 4 years of experience in software development.
+
+EDUCATION
+MS Data Science
+
+SKILLS
+Python, TensorFlow, PyTorch, scikit-learn, Pandas
+
+EXPERIENCE
+Machine Learning Engineer | Tech Company | 4 years
+- Led development of Recommendation system
+- Contributed to Image classification model
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Recommendation system: Built using Python and TensorFlow
+Image classification model: Implemented with PyTorch and scikit-learn","Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years",52.5,1,Machine Learning Engineer,Machine Learning Engineer
+neg_6,"Frontend Developer Resume
+
+SUMMARY
+Frontend Developer with 2 years of experience in software development.
+
+EDUCATION
+BS Web Design
+
+SKILLS
+HTML, CSS, JavaScript, Vue.js, Figma
+
+EXPERIENCE
+Frontend Developer | Tech Company | 2 years
+- Led development of Corporate website redesign
+- Contributed to Interactive portfolio
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Corporate website redesign: Built using HTML and CSS
+Interactive portfolio: Implemented with JavaScript and Vue.js","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",0.0,0,Frontend Developer,Senior Java Developer
+pos_8,"Backend Developer Resume
+
+SUMMARY
+Backend Developer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+Python, Django, PostgreSQL, REST API, Docker
+
+EXPERIENCE
+Backend Developer | Tech Company | 5 years
+- Led development of E-commerce platform
+- Contributed to Payment gateway integration
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+E-commerce platform: Built using Python and Django
+Payment gateway integration: Implemented with PostgreSQL and REST API","Backend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Backend Developer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, Django, PostgreSQL, REST API
+
+PREFERRED SKILLS
+Docker, Redis, Celery
+
+RESPONSIBILITIES
+- Design APIs - Database optimization - Code reviews
+
+QUALIFICATIONS
+['BS in Computer Science or related field']
+Required experience: 3-5 years",80.0,1,Backend Developer,Backend Developer
+pos_19,"Senior Java Developer Resume
+
+SUMMARY
+Senior Java Developer with 6 years of experience in software development.
+
+EDUCATION
+BS Computer Engineering
+
+SKILLS
+Java, Spring Boot, MySQL, Microservices, Kubernetes
+
+EXPERIENCE
+Senior Java Developer | Tech Company | 6 years
+- Led development of Banking application
+- Contributed to Distributed system design
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Banking application: Built using Java and Spring Boot
+Distributed system design: Implemented with MySQL and Microservices","Senior Java Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Senior Java Developer with 5+ years of experience.
+
+REQUIRED SKILLS
+Java, Spring Boot, MySQL, Microservices
+
+PREFERRED SKILLS
+Kubernetes, AWS, Redis
+
+RESPONSIBILITIES
+- Lead development team - Architecture design
+
+QUALIFICATIONS
+['BS in Computer Engineering with 5+ years experience']
+Required experience: 5+ years",80.0,1,Senior Java Developer,Senior Java Developer
+pos_4,"Mobile Developer Resume
+
+SUMMARY
+Mobile Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Information Technology
+
+SKILLS
+React Native, Flutter, iOS, Android, Firebase
+
+EXPERIENCE
+Mobile Developer | Tech Company | 3 years
+- Led development of Fitness tracking app
+- Contributed to Food delivery application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Fitness tracking app: Built using React Native and Flutter
+Food delivery application: Implemented with iOS and Android","Mobile Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Mobile Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+React Native, iOS, Android
+
+PREFERRED SKILLS
+Flutter, Firebase, Mobile UI/UX
+
+RESPONSIBILITIES
+- Develop mobile apps - App store deployment
+
+QUALIFICATIONS
+['BS in IT or Computer Science']
+Required experience: 2-4 years",90.0,1,Mobile Developer,Mobile Developer
+pos_17,"Full Stack Developer Resume
+
+SUMMARY
+Full Stack Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Software Engineering
+
+SKILLS
+JavaScript, React, Node.js, MongoDB, AWS
+
+EXPERIENCE
+Full Stack Developer | Tech Company | 3 years
+- Led development of Social media dashboard
+- Contributed to Real-time chat application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Social media dashboard: Built using JavaScript and React
+Real-time chat application: Implemented with Node.js and MongoDB","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",80.0,1,Full Stack Developer,Full Stack Developer
+neg_5,"Machine Learning Engineer Resume
+
+SUMMARY
+Machine Learning Engineer with 4 years of experience in software development.
+
+EDUCATION
+MS Data Science
+
+SKILLS
+Python, TensorFlow, PyTorch, scikit-learn, Pandas
+
+EXPERIENCE
+Machine Learning Engineer | Tech Company | 4 years
+- Led development of Recommendation system
+- Contributed to Image classification model
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Recommendation system: Built using Python and TensorFlow
+Image classification model: Implemented with PyTorch and scikit-learn","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",0.0,0,Machine Learning Engineer,DevOps Engineer
+neg_2,"DevOps Engineer Resume
+
+SUMMARY
+DevOps Engineer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+AWS, Terraform, Jenkins, Docker, Kubernetes
+
+EXPERIENCE
+DevOps Engineer | Tech Company | 5 years
+- Led development of CI/CD pipeline automation
+- Contributed to Infrastructure as code
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+CI/CD pipeline automation: Built using AWS and Terraform
+Infrastructure as code: Implemented with Jenkins and Docker","Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years",0.0,0,DevOps Engineer,Machine Learning Engineer
+neg_14,"DevOps Engineer Resume
+
+SUMMARY
+DevOps Engineer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+AWS, Terraform, Jenkins, Docker, Kubernetes
+
+EXPERIENCE
+DevOps Engineer | Tech Company | 5 years
+- Led development of CI/CD pipeline automation
+- Contributed to Infrastructure as code
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+CI/CD pipeline automation: Built using AWS and Terraform
+Infrastructure as code: Implemented with Jenkins and Docker","Mobile Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Mobile Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+React Native, iOS, Android
+
+PREFERRED SKILLS
+Flutter, Firebase, Mobile UI/UX
+
+RESPONSIBILITIES
+- Develop mobile apps - App store deployment
+
+QUALIFICATIONS
+['BS in IT or Computer Science']
+Required experience: 2-4 years",0.0,0,DevOps Engineer,Mobile Developer
+pos_6,"Frontend Developer Resume
+
+SUMMARY
+Frontend Developer with 2 years of experience in software development.
+
+EDUCATION
+BS Web Design
+
+SKILLS
+HTML, CSS, JavaScript, Vue.js, Figma
+
+EXPERIENCE
+Frontend Developer | Tech Company | 2 years
+- Led development of Corporate website redesign
+- Contributed to Interactive portfolio
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Corporate website redesign: Built using HTML and CSS
+Interactive portfolio: Implemented with JavaScript and Vue.js","Frontend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Frontend Developer with 2-3 years of experience.
+
+REQUIRED SKILLS
+HTML, CSS, JavaScript, React
+
+PREFERRED SKILLS
+Vue.js, TypeScript, Responsive Design
+
+RESPONSIBILITIES
+- Build user interfaces - Optimize web performance
+
+QUALIFICATIONS
+['BS in Web Design or Computer Science']
+Required experience: 2-3 years",62.5,1,Frontend Developer,Frontend Developer
+pos_2,"Machine Learning Engineer Resume
+
+SUMMARY
+Machine Learning Engineer with 4 years of experience in software development.
+
+EDUCATION
+MS Data Science
+
+SKILLS
+Python, TensorFlow, PyTorch, scikit-learn, Pandas
+
+EXPERIENCE
+Machine Learning Engineer | Tech Company | 4 years
+- Led development of Recommendation system
+- Contributed to Image classification model
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Recommendation system: Built using Python and TensorFlow
+Image classification model: Implemented with PyTorch and scikit-learn","Machine Learning Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented Machine Learning Engineer with 3-5 years of experience.
+
+REQUIRED SKILLS
+Python, TensorFlow, PyTorch, Machine Learning
+
+PREFERRED SKILLS
+Deep Learning, NLP, Computer Vision
+
+RESPONSIBILITIES
+- Develop ML models - Deploy models to production
+
+QUALIFICATIONS
+['MS in Data Science or Machine Learning']
+Required experience: 3-5 years",52.5,1,Machine Learning Engineer,Machine Learning Engineer
+neg_3,"Frontend Developer Resume
+
+SUMMARY
+Frontend Developer with 2 years of experience in software development.
+
+EDUCATION
+BS Web Design
+
+SKILLS
+HTML, CSS, JavaScript, Vue.js, Figma
+
+EXPERIENCE
+Frontend Developer | Tech Company | 2 years
+- Led development of Corporate website redesign
+- Contributed to Interactive portfolio
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Corporate website redesign: Built using HTML and CSS
+Interactive portfolio: Implemented with JavaScript and Vue.js","Full Stack Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Full Stack Developer with 2-4 years of experience.
+
+REQUIRED SKILLS
+JavaScript, React, Node.js, MongoDB
+
+PREFERRED SKILLS
+AWS, TypeScript, GraphQL
+
+RESPONSIBILITIES
+- Build web applications - Frontend and backend development
+
+QUALIFICATIONS
+['BS in Software Engineering or equivalent']
+Required experience: 2-4 years",17.5,0,Frontend Developer,Full Stack Developer
+neg_17,"Mobile Developer Resume
+
+SUMMARY
+Mobile Developer with 3 years of experience in software development.
+
+EDUCATION
+BS Information Technology
+
+SKILLS
+React Native, Flutter, iOS, Android, Firebase
+
+EXPERIENCE
+Mobile Developer | Tech Company | 3 years
+- Led development of Fitness tracking app
+- Contributed to Food delivery application
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+Fitness tracking app: Built using React Native and Flutter
+Food delivery application: Implemented with iOS and Android","Frontend Developer Position
+
+ABOUT THE ROLE
+We are seeking a talented Frontend Developer with 2-3 years of experience.
+
+REQUIRED SKILLS
+HTML, CSS, JavaScript, React
+
+PREFERRED SKILLS
+Vue.js, TypeScript, Responsive Design
+
+RESPONSIBILITIES
+- Build user interfaces - Optimize web performance
+
+QUALIFICATIONS
+['BS in Web Design or Computer Science']
+Required experience: 2-3 years",0.0,0,Mobile Developer,Frontend Developer
+pos_15,"DevOps Engineer Resume
+
+SUMMARY
+DevOps Engineer with 5 years of experience in software development.
+
+EDUCATION
+BS Computer Science
+
+SKILLS
+AWS, Terraform, Jenkins, Docker, Kubernetes
+
+EXPERIENCE
+DevOps Engineer | Tech Company | 5 years
+- Led development of CI/CD pipeline automation
+- Contributed to Infrastructure as code
+- Collaborated with cross-functional teams
+- Participated in code reviews and agile sprints
+
+PROJECTS
+CI/CD pipeline automation: Built using AWS and Terraform
+Infrastructure as code: Implemented with Jenkins and Docker","DevOps Engineer Position
+
+ABOUT THE ROLE
+We are seeking a talented DevOps Engineer with 4-6 years of experience.
+
+REQUIRED SKILLS
+AWS, Docker, Kubernetes, CI/CD
+
+PREFERRED SKILLS
+Terraform, Jenkins, Monitoring tools
+
+RESPONSIBILITIES
+- Automate infrastructure - Manage deployments
+
+QUALIFICATIONS
+['BS in Computer Science with DevOps experience']
+Required experience: 4-6 years",72.5,1,DevOps Engineer,DevOps Engineer
