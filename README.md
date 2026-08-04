@@ -1,475 +1,333 @@
-# 🤖 AI Resume Matcher
-
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
+# 🤖 AI Resume Screening Portal
+![banner](banner.png)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-4.2-green)](https://www.djangoproject.com/)
+[![Sentence-BERT](https://img.shields.io/badge/Sentence--BERT-Semantic%20Matching-orange)](https://www.sbert.net/)
 [![Tests](https://img.shields.io/badge/Tests-31%20passing-brightgreen)](.)
 [![Security](https://img.shields.io/badge/Security-Hardened-success)](SECURITY.md)
 
-> **Resume screening with AI-powered semantic similarity**
+> **AI-powered resume screening system using Sentence-BERT for semantic resume–job description matching**
 
-A Django web application that analyzes resumes against job descriptions using Sentence-BERT for intelligent candidate ranking.
-
-**🆕 Day 2 Updates:** Security hardening, comprehensive testing, code refactoring, and ML training pipeline added! See [Day 2 Updates](#-day-2-updates) section below.
+Fine-tuned an AI-powered resume screening system that uses Sentence-BERT for semantic similarity, paired with a Django backend featuring document parsing, keyword extraction, candidate ranking, and RESTful workflows. Implemented secure file upload validation, input sanitisation, and a modular Django architecture.
 
 ---
 
-## ✨ Features
+## 📸 Screenshots
 
-- 📄 **Resume Upload** - Support for PDF, DOCX, and TXT files
-- 🤖 **AI-Powered Matching** - Uses Sentence-BERT for semantic similarity
-- 📊 **Smart Scoring** - Bidirectional similarity between resume and job description
-- 🔍 **Keyword Extraction** - Identifies matching skills and qualifications
-- 📈 **Ranking System** - Compare multiple resumes and rank them
-- 🔒 **Security Hardened** - CSRF protection, file sanitization, no default secrets
-- ✅ **Comprehensive Testing** - 89+ test cases for reliability
-- 🏗️ **Clean Architecture** - Separated concerns (views, services, utilities)
-- 🎓 **Training Pipeline** - Generate datasets and fine-tune models
 
-### File Support
-- **PDF** - Text extraction with PyMuPDF
-- **DOCX** - Word document support
-- **TXT** - Plain text files
 
-### AI Model
-- **Sentence-BERT** (all-mpnet-base-v2) - 768-dimensional embeddings for semantic similarity
+### Analysis Results & Candidate Ranking
+![Dashboard Results](screenshots/dashboard_results.png)
+
+---
+
+## ✨ Key Features
+
+### 🧠 AI & NLP
+- **Sentence-BERT Semantic Matching** — Bidirectional cosine similarity between resume and job description sentences using `all-mpnet-base-v2` (768-dimensional embeddings)
+- **DistilBERT Classification** — Secondary scoring model (`Poojan11/resume-screening-distilbert`) for classification-based match confidence
+- **Weighted Ensemble Scoring** — 60% SBERT similarity + 40% DistilBERT classification for robust final scores
+- **Smart Keyword Extraction** — NLP-powered skill identification using NLTK POS tagging + domain-specific tech keyword matching
+- **Per-Skill Scoring** — Individual match scores for each technical skill found in the job description
+- **Skills Gap Analysis** — Automatically identifies missing skills and areas to improve
+
+### 📄 Document Processing
+- **Multi-format Support** — PDF (PyMuPDF), DOCX (python-docx), TXT, and image OCR (pytesseract)
+- **Intelligent Text Extraction** — Filters relevant content (skills, projects, experience) from raw text
+- **Job Role Detection** — Automatically extracts job title, experience requirements, and key skills from JDs
+
+### 📊 Dashboard & Analytics
+- **Modern Dashboard UI** — Professional interface with sidebar navigation, upload areas, and comprehensive results
+- **Candidate Ranking Table** — Side-by-side comparison with Match Score, Skills Match, Experience Match, and Status badges
+- **Circular Progress Charts** — Visual average match score with SVG-based circular progress indicators
+- **Donut Distribution Chart** — Match score distribution visualization
+- **Detailed Reports** — AI-generated insights and actionable recommendations per candidate
+- **Drag & Drop Upload** — Intuitive file upload with type validation and file preview cards
+
+### 🔒 Security
+- **CSRF Protection** — Enabled on all POST endpoints
+- **File Sanitisation** — Prevents path traversal attacks (`../../etc/passwd`)
+- **Input Validation** — File type, size (10MB limit), and content verification
+- **Secure Headers** — HSTS, X-Frame-Options, Content-Type-Options
+- **No Default Secrets** — `SECRET_KEY` must be explicitly configured via `.env`
+- **Security Logging** — Separate rotating log for security events
+
+### 🏗️ Clean Architecture
+- **Separation of Concerns** — Views (HTTP) → Services (AI/ML) → Utils (file processing)
+- **RESTful API** — JSON endpoints for enhanced analysis (`/api/analyze/`)
+- **Modular Design** — Independent, testable modules with clear interfaces
+- **31+ Test Cases** — Comprehensive coverage for utilities, services, views, and security
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.11+
+- Python 3.10+
 - pip
-- 2GB RAM minimum
+- 2GB+ RAM (for ML models)
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/ai-resume-matcher.git
-   cd ai-resume-matcher
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/Resume-Screening-Portal.git
+cd Resume-Screening-Portal
 
-2. **Create virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate      # Linux/Mac
+venv\Scripts\activate         # Windows
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 3. Install dependencies
+pip install -r requirements.txt
 
-4. **Download spaCy model**
-   ```bash
-   python -m spacy download en_core_web_sm
-   ```
+# 4. Download spaCy model
+python -m spacy download en_core_web_sm
 
-5. **Setup environment variables**
-   ```bash
-   # Copy example environment file
-   cp .env.example .env
-   
-   # Generate a secure SECRET_KEY
-   python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
-   
-   # Edit .env and paste the generated SECRET_KEY
-   # Set other variables as needed
-   ```
+# 5. Download NLTK data
+python -c "import nltk; nltk.download('stopwords'); nltk.download('punkt'); nltk.download('averaged_perceptron_tagger')"
 
-6. **Run migrations**
-   ```bash
-   python manage.py migrate
-   ```
+# 6. Setup environment
+cp .env.example .env
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+# Paste the generated key into .env as SECRET_KEY=<your-key>
 
-7. **Run the development server**
-   ```bash
-   python manage.py runserver
-   ```
+# 7. Run migrations
+python manage.py migrate
 
-8. **Open your browser**
-   ```
-   http://localhost:8000
-   ```
+# 8. Start the server
+python manage.py runserver
 
-9. **Run tests (optional)**
-   ```bash
-   python manage.py test
-   ```
+# 9. Open in browser
+# http://localhost:8000
+```
 
 ---
 
 ## 📖 How It Works
 
 ### Workflow
-1. **Upload** - Upload resumes (PDF/DOCX/TXT) and job description
-2. **Extract** - Text extracted from documents
-3. **Analyze** - Sentence-BERT calculates semantic similarity
-4. **Score** - Bidirectional similarity score (0-100%)
-5. **Rank** - Resumes ranked by match percentage
+```
+Upload Resumes + JD  →  Extract Text  →  Sentence-BERT Encoding
+                                              ↓
+                                     Bidirectional Cosine Similarity
+                                              ↓
+                              DistilBERT Classification (optional)
+                                              ↓
+                              Weighted Ensemble Score (0-100%)
+                                              ↓
+                     Keyword Extraction  +  Skills Gap Analysis
+                                              ↓
+                           Ranked Results + Detailed Report
+```
 
 ### Scoring Algorithm
 ```python
-# Extract text from documents
-resume_text = extract_text(resume_file)
-jd_text = extract_text(jd_file)
+# Bidirectional Sentence-BERT Similarity
+resume_to_jd = max_cosine_sim(resume_sentences, jd_sentences)  # per sentence
+jd_to_resume = max_cosine_sim(jd_sentences, resume_sentences)
+sbert_score = mean(resume_to_jd + jd_to_resume) / 2
 
-# Calculate bidirectional similarity
-resume_to_jd = cosine_similarity(resume_sentences, jd_sentences)
-jd_to_resume = cosine_similarity(jd_sentences, resume_sentences)
+# DistilBERT Classification
+distilbert_score = softmax(model(resume + jd))['match_probability']
 
-# Final score
-score = (resume_to_jd + jd_to_resume) / 2
+# Final Weighted Score
+final_score = (sbert_score * 0.6) + (distilbert_score * 0.4)
 ```
-
+### Upload & Analyze Dashboard
+![Dashboard Upload](screenshots/dashboard_upload.png)
 ---
 
 ## 🛠️ Tech Stack
 
-- **Django 4.2** - Web framework
-- **Sentence-Transformers** - SBERT for semantic similarity
-- **spaCy** - NLP and sentence segmentation
-- **NLTK** - Keyword extraction
-- **PyMuPDF** - PDF text extraction
-- **python-docx** - DOCX file support
-- **SQLite** - Database
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Web Framework** | Django 4.2 | HTTP handling, templates, routing |
+| **Semantic Matching** | Sentence-Transformers (SBERT) | 768-dim embeddings, cosine similarity |
+| **Classification** | DistilBERT (HuggingFace) | Resume-JD match classification |
+| **NLP** | spaCy, NLTK | Sentence segmentation, keyword extraction |
+| **PDF Parsing** | PyMuPDF (fitz) | Text extraction from PDFs |
+| **DOCX Parsing** | python-docx | Text extraction from Word documents |
+| **OCR** | pytesseract + Pillow | Text extraction from images |
+| **Database** | SQLite | Django default storage |
+| **Frontend** | Vanilla JS + CSS | Modern dashboard with SVG charts |
+
+---
+
+## 🔗 API Endpoints
+
+### Modern Dashboard (default)
+```http
+GET /
+```
+Renders the full-featured dashboard with upload, analysis, and reporting.
+
+### Enhanced Analysis API
+```http
+POST /api/analyze/
+Content-Type: multipart/form-data
+
+Parameters:
+  - jd: Job description file (required)
+  - resume1-5: Up to 5 resume files
+
+Response:
+{
+  "success": true,
+  "job_role": "Software Engineer",
+  "experience_required": "3-5 Years",
+  "total_jd_skills": 15,
+  "results": [
+    {
+      "resume_name": "candidate.pdf",
+      "score": 85.5,
+      "sbert_score": 82.3,
+      "distilbert_score": 90.2,
+      "skills_match": 73.3,
+      "experience_match": 88,
+      "matched_keywords": ["python", "django", "rest", "api"],
+      "missing_keywords": ["kubernetes", "docker"],
+      "skill_scores": {"Python": 92, "Django": 86, ...},
+      "status": "Best Match",
+      "match_report": [...]
+    }
+  ],
+  "top_strengths": ["Python", "Django", ...],
+  "insights": ["Candidate A is the best match..."],
+  "recommendations": ["Shortlist top 2 candidates", ...],
+  "score_distribution": {"above_80": 2, "between_60_79": 1, "below_60": 1}
+}
+```
+
+### Legacy Endpoints
+```http
+GET  /legacy/          # Original multi-upload form
+POST /multi-match/     # Original analysis endpoint
+```
 
 ---
 
 ## 🎓 Training Your Own Model
 
-### Generate Training Dataset
-
+### Generate Dataset → Train → Deploy
 ```bash
-# Generate synthetic dataset
+# Install training dependencies
+pip install -r requirements-training.txt
+
+# Generate synthetic training data
 python generate_dataset.py --positive 100 --negative 100 --samples
 
-# Output: training_data/resume_jd_dataset.json
-```
-
-### Visualize Dataset
-
-```bash
-# Requires matplotlib and seaborn
-pip install matplotlib seaborn
-
+# Visualise dataset statistics
 python visualize_dataset.py
-# Output: training_data/visualizations/
-```
 
-### Fine-tune Model
-
-```bash
-# Train on generated dataset
+# Fine-tune Sentence-BERT
 python train_model.py --epochs 4 --batch-size 16
 
 # Model saved to: output/job_bert_finetuned/
-```
-
-### Use Fine-tuned Model
-
-Update [services.py](analysis/services.py):
-```python
-# Replace model path
-sbert_model = SentenceTransformer('output/job_bert_finetuned')
+# Update services.py to point to your fine-tuned model
 ```
 
 See [TRAINING_GUIDE.md](TRAINING_GUIDE.md) for detailed instructions.
 
 ---
 
-## 🔧 Configuration
+## 📁 Project Structure
 
-Create a `.env` file:
-```env
-SECRET_KEY=your-secret-key-here
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
+```
+Resume-Screening-Portal/
+├── analysis/                    # Main Django app
+│   ├── views.py                # HTTP handlers + API endpoints
+│   ├── services.py             # AI/ML business logic (SBERT, DistilBERT)
+│   ├── utils.py                # File processing, validation, sanitisation
+│   ├── tests.py                # 31+ comprehensive test cases
+│   ├── urls.py                 # URL routing
+│   └── templates/analysis/
+│       ├── dashboard.html      # Modern dashboard UI ★
+│       ├── multi_upload.html   # Legacy upload form
+│       └── upload.html         # Single resume form
+├── resume_analyzer/            # Django project settings
+│   ├── settings.py             # Security-hardened configuration
+│   └── urls.py                 # Root URL routing
+├── generate_dataset.py         # Synthetic training data generator
+├── train_model.py              # SBERT fine-tuning script
+├── visualize_dataset.py        # Dataset visualisation
+├── demo_training.py            # Training pipeline demo
+├── screenshots/                # UI screenshots for README
+├── .env.example                # Environment template
+├── requirements.txt            # Production dependencies
+├── requirements-training.txt   # Training dependencies
+├── SECURITY.md                 # Security documentation
+├── TRAINING_GUIDE.md           # Model training guide
+└── TRAINING_QUICKREF.md        # Quick reference card
 ```
 
 ---
 
-## 🔗 API Endpoints
+## 🔒 Security & Testing
 
-### Compare Resumes
-```http
-POST /analysis/compare-resumes/
-Content-Type: multipart/form-data
-
-Parameters:
-- jd_file: Job description file
-- resume1-5: Up to 5 resume files
-
-Response:
-{
-  "status": "success",
-  "results": [
-    {
-      "resume_name": "candidate.pdf",
-      "score": 85.5,
-      "matched_keywords": ["python", "django"],
-      "match_report": [...]
-    }
-  ]
-}
-```
-
----
-
-## � Security & Testing
-
-### Security Features
-- ✅ **CSRF Protection** - Enabled on all POST endpoints
-- ✅ **File Sanitization** - Prevents path traversal attacks
-- ✅ **Input Validation** - File type, size, and content checks
-- ✅ **Secure Headers** - HSTS, X-Frame-Options, Content-Type-Options
-- ✅ **No Default Secrets** - SECRET_KEY must be explicitly set
-- ✅ **Security Logging** - Separate log for security events
-
-See [SECURITY.md](SECURITY.md) for detailed security documentation.
-
-### Testing
+### Run Tests
 ```bash
-# Run all tests
+# All tests
 python manage.py test
 
-# Run specific test suites
+# Specific suites
 python manage.py test analysis.tests.SecurityTestCase
 python manage.py test analysis.tests.UtilsTestCase
 python manage.py test analysis.tests.ServicesTestCase
 
-# Run with coverage
+# With coverage
 pip install coverage
 coverage run --source='.' manage.py test
 coverage report
 ```
 
-### Code Quality
-- **89+ test cases** covering utilities, services, views, and security
-- **Separation of concerns** - Views, services, and utilities are separate
-- **No code duplication** - DRY principles followed
-- **Type safety** - Clear function signatures and documentation
+See [SECURITY.md](SECURITY.md) for full security documentation.
 
 ---
 
-## �🚨 Troubleshooting
+## 🔧 Configuration
 
-### Model Download Issues
-- Ensure stable internet connection
-- First run takes ~2 minutes to download SBERT model
-
-### NLTK Data Missing
+Create a `.env` file from the template:
 ```bash
-python -m nltk.downloader stopwords punkt averaged_perceptron_tagger
+cp .env.example .env
 ```
 
-### File Upload Issues
-- Ensure file is PDF, DOCX, or TXT
-- Check file size (<10MB)
+Key settings:
+```env
+SECRET_KEY=your-generated-secret-key
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+MAX_FILE_SIZE=10485760
+LOG_LEVEL=INFO
+```
 
 ---
 
-## 📁 Project Structure
+## 🚨 Troubleshooting
 
-```
-resume_analyzer/
-├── analysis/              # Main Django app
-│   ├── views.py          # HTTP handlers (refactored)
-│   ├── services.py       # Business logic & AI/ML
-│   ├── utils.py          # Utility functions
-│   ├── tests.py          # Comprehensive test suite
-│   ├── urls.py           # URL routing
-│   └── templates/        # HTML templates
-├── resume_analyzer/       # Django project
-│   ├── settings.py       # Configuration (security hardened)
-│   └── urls.py           # Root URLs
-├── output/job_bert/       # Pre-trained SBERT model
-├── media/                 # File uploads (auto-deleted)
-├── .env.example          # Environment template
-├── SECURITY.md           # Security documentation
-├── manage.py
-└── requirements.txt
-```
+| Issue | Solution |
+|-------|----------|
+| Model download slow | First run downloads ~420MB SBERT model. Ensure stable internet. |
+| NLTK data missing | `python -m nltk.downloader stopwords punkt averaged_perceptron_tagger` |
+| File upload fails | Check file is PDF/DOCX/TXT and under 10MB |
+| SECRET_KEY error | Copy `.env.example` to `.env` and generate a key |
+| spaCy model missing | `python -m spacy download en_core_web_sm` |
 
 ---
 
 ## 🚀 Future Enhancements
 
-- [ ] User authentication & authorization
+- [ ] User authentication & authorisation
 - [ ] Database storage for analysis history
-- [ ] Batch resume processing with background tasks (Celery)
+- [ ] Batch processing with Celery background tasks
 - [ ] Export results to PDF/CSV
 - [ ] REST API with Django REST Framework
-- [ ] Rate limiting for API endpoints
 - [ ] Redis caching for embeddings
-- [ ] Async processing for large files
-- [ ] Dashboard with analytics
+- [ ] Dashboard with analytics trends
 
 ---
 
-## 🎉 Last day Updates
+**Built with Django + Sentence-BERT + DistilBERT**
 
-### Major Improvements (January 23, 2026)
-
-#### 🔒 Security Enhancements
-- **Removed CSRF Exemptions** - All POST endpoints now protected
-- **File Sanitization** - Prevents path traversal attacks (../../etc/passwd)
-- **Enforced SECRET_KEY** - No insecure defaults, must be configured
-- **Security Headers** - Added HSTS, X-Frame-Options, Content-Type-Options
-- **Secure Logging** - Separate security.log with rotating file handlers
-- **Environment Configuration** - Enhanced .env.example with security settings
-
-**Impact:** Security grade improved from C- to A+
-
-#### ✅ Comprehensive Testing Suite
-- **31 Test Cases** covering all critical functionality:
-  - `UtilsTestCase` (11 tests) - File operations, validation, sanitization
-  - `ServicesTestCase` (8 tests) - AI/ML operations, analysis logic
-  - `ViewsTestCase` (6 tests) - HTTP handling, API endpoints
-  - `SecurityTestCase` (3 tests) - CSRF protection, path traversal prevention
-  - `IntegrationTestCase` (1 test) - End-to-end workflows
-
-**Impact:** 0% → 100% test coverage for critical paths
-
-#### 🏗️ Code Architecture Refactoring
-- **Separated Concerns:**
-  - [views.py](analysis/views.py) - HTTP handling only (114 lines)
-  - [services.py](analysis/services.py) - Business logic & AI/ML (302 lines)
-  - [utils.py](analysis/utils.py) - Utility functions (184 lines)
-- **Eliminated Code Duplication** - 250+ lines of repeated code removed
-- **Improved Maintainability** - Clear separation of responsibilities
-
-**Impact:** 438-line monolithic file → 3 organized modules
-
-#### 🎓 ML Training Pipeline
-- **Dataset Generation** - [generate_dataset.py](generate_dataset.py)
-  - Creates synthetic resume-JD pairs
-  - 8 job roles with realistic templates
-  - Automatic scoring based on skill overlap
-  - Exports to JSON and CSV formats
-
-- **Model Training** - [train_model.py](train_model.py)
-  - Fine-tune Sentence-BERT on custom data
-  - CosineSimilarityLoss for optimization
-  - Validation during training
-  - Saves best model automatically
-
-- **Visualization Tools** - [visualize_dataset.py](visualize_dataset.py)
-  - Score distribution charts
-  - Role matching heatmaps
-  - Dataset statistics
-
-- **Demo Script** - [demo_training.py](demo_training.py)
-  - Quick pipeline demonstration
-  - Model evaluation examples
-
-**Impact:** Enables custom model training for domain-specific needs
-
-#### 📚 Enhanced Documentation
-- **[SECURITY.md](SECURITY.md)** - Comprehensive security guidelines
-- **[TRAINING_GUIDE.md](TRAINING_GUIDE.md)** - Complete training documentation
-- **[TRAINING_QUICKREF.md](TRAINING_QUICKREF.md)** - Quick reference card
-- **Updated README** - Reflects all new features
-
-### What's New in Detail
-
-#### Files Added
-```
-├── analysis/
-│   ├── services.py          # NEW: Business logic layer
-│   ├── utils.py             # NEW: Utility functions
-│   ├── tests.py             # UPDATED: Comprehensive test suite
-│   └── views_backup.py      # Backup of original views
-├── generate_dataset.py      # NEW: Training data generator
-├── train_model.py           # NEW: Model fine-tuning script
-├── visualize_dataset.py     # NEW: Dataset visualization
-├── demo_training.py         # NEW: Training demo
-├── SECURITY.md              # NEW: Security documentation
-├── TRAINING_GUIDE.md        # NEW: Training guide
-├── TRAINING_QUICKREF.md     # NEW: Quick reference
-├── requirements-training.txt # NEW: Training dependencies
-├── .env                     # NEW: Environment configuration
-└── training_data/           # NEW: Generated datasets
-```
-
-#### Configuration Changes
-- **settings.py** - Enhanced with:
-  - Security middleware configuration
-  - Rotating log handlers
-  - File upload limits from environment
-  - Environment-based security settings
-
-- **.env.example** - Added:
-  - Security settings (HSTS, SSL redirect)
-  - File upload configuration
-  - Log level settings
-  - Detailed comments
-
-### Migration Guide
-
-#### Updating from Day 1 Version
-
-1. **Install new dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Create .env file:**
-   ```bash
-   cp .env.example .env
-   # Generate SECRET_KEY and add to .env
-   python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
-   ```
-
-3. **Run tests to verify:**
-   ```bash
-   python manage.py test
-   ```
-
-4. **Download NLTK data:**
-   ```bash
-   python -c "import nltk; nltk.download('punkt_tab')"
-   ```
-
-5. **Start server:**
-   ```bash
-   python manage.py runserver
-   ```
-
-### Performance Metrics
-
-| Metric | Day 1 | Day 2 | Improvement |
-|--------|-------|-------|-------------|
-| Security Score | C- | A+ | ↑ 300% |
-| Test Coverage | 0% | 31 tests | ↑ 100% |
-| Code Quality | Monolithic | Layered | ↑ Maintainable |
-| CSRF Protection | ❌ | ✅ | ✓ Fixed |
-| Path Traversal | Vulnerable | Protected | ✓ Fixed |
-| Code Duplication | High | Low | ↓ 60% |
-
-### Training Capabilities
-
-Now you can:
-- ✅ Generate custom training datasets
-- ✅ Fine-tune models on your data
-- ✅ Visualize dataset statistics
-- ✅ Evaluate model performance
-- ✅ Deploy custom-trained models
-
-**Quick Start Training:**
-```bash
-# Generate dataset
-python generate_dataset.py --positive 100 --negative 100
-
-# Train model
-python train_model.py --epochs 4
-
-# Visualize results
-python visualize_dataset.py
-```
-
-
-**Built with Django and Sentence-BERT**
-
-*Day 1: Core functionality | Day 2: Production-ready with security, testing, and training pipeline*
+*Core AI matching • Security hardened • Comprehensive testing • Training pipeline*

@@ -24,7 +24,17 @@ if not nlp.has_pipe("sentencizer"):
     nlp.add_pipe("sentencizer")
 
 # Load Sentence-BERT model (for similarity)
-sbert_model = SentenceTransformer('output/job_bert')
+import os
+try:
+    if os.path.exists('output/job_bert'):
+        sbert_model = SentenceTransformer('output/job_bert')
+        logger.info("Loaded local fine-tuned Sentence-BERT model (output/job_bert).")
+    else:
+        logger.info("Local model 'output/job_bert' not found. Loading pre-trained 'all-mpnet-base-v2'...")
+        sbert_model = SentenceTransformer('all-mpnet-base-v2')
+except Exception as e:
+    logger.warning(f"Error loading local model, falling back to pre-trained: {e}")
+    sbert_model = SentenceTransformer('all-mpnet-base-v2')
 
 # Load DistilBERT resume screening model (for classification)
 distilbert_tokenizer = None
@@ -300,3 +310,354 @@ def compare_multiple_resumes(resumes_data, jd_text):
     results.sort(key=lambda x: x['score'], reverse=True)
     
     return results
+
+
+# ============================================================
+# Enhanced Analysis Functions for Dashboard UI
+# ============================================================
+
+def extract_job_role(jd_text):
+    """
+    Extract job role/title from job description text.
+    Looks at the first few lines for common title patterns.
+    """
+    import re
+    lines = jd_text.strip().split('\n')
+    
+    # Try explicit patterns first
+    for line in lines[:10]:
+        line = line.strip()
+        if not line:
+            continue
+        lower = line.lower()
+        for pattern in ['job title:', 'position:', 'role:', 'title:', 'job role:']:
+            if lower.startswith(pattern):
+                role = line.split(':', 1)[1].strip()
+                if role:
+                    return role
+    
+    # Fallback: first short, meaningful line is likely the title
+    for line in lines[:5]:
+        line = line.strip()
+        if 3 < len(line) < 80 and len(line.split()) <= 10:
+            # Skip lines that look like meta text
+            skip = ['about', 'company', 'overview', 'description', 'summary', 'we are']
+            if not any(s in line.lower() for s in skip):
+                return line
+    
+    return "Job Position"
+
+
+def extract_experience_years(text):
+    """
+    Extract experience requirement from text using regex patterns.
+    """
+    import re
+    text_lower = text.lower()
+    
+    patterns = [
+        r'(\d+)\s*[-–to]+\s*(\d+)\s*(?:\+)?\s*(?:years?|yrs?)',
+        r'(\d+)\+?\s*(?:years?|yrs?)\s*(?:of)?\s*(?:experience|exp)?',
+        r'minimum\s*(?:of)?\s*(\d+)\s*(?:years?|yrs?)',
+        r'at\s*least\s*(\d+)\s*(?:years?|yrs?)',
+    ]
+    
+    for pattern in patterns:
+        match = re.search(pattern, text_lower)
+        if match:
+            groups = match.groups()
+            if len(groups) == 2 and groups[1]:
+                return f"{groups[0]}-{groups[1]} Years"
+            return f"{groups[0]}+ Years"
+    
+    return "Not Specified"
+
+
+def get_jd_tech_skills(jd_text):
+    """
+    Extract all tech/domain skills mentioned in the job description.
+    Uses the TECH_KEYWORDS list and NLP noun extraction.
+    """
+    jd_lower = jd_text.lower()
+    found_skills = []
+    
+    for keyword in TECH_KEYWORDS:
+        if keyword in jd_lower:
+            found_skills.append(keyword)
+    
+    # Also extract capitalized multi-word terms that look like skills
+    try:
+        tokens = word_tokenize(jd_text)
+        tagged = pos_tag(tokens)
+        
+        stop_words = set(stopwords.words('english')) | GENERIC_RESUME_WORDS
+        nouns = [w for w, pos in tagged
+                 if pos.startswith('NN') and len(w) > 2
+                 and w.lower() not in stop_words
+                 and w[0].isupper()]
+        
+        for noun in nouns:
+            if noun.lower() not in [s.lower() for s in found_skills]:
+                found_skills.append(noun)
+    except Exception:
+        pass
+    
+    # Deduplicate preserving order and capitalize
+    seen = set()
+    unique = []
+    for s in found_skills:
+        key = s.lower()
+        if key not in seen:
+            seen.add(key)
+            unique.append(s.title() if len(s) > 3 else s.upper())
+    
+    return unique[:20]
+
+
+def calculate_individual_skill_scores(resume_text, jd_skills):
+    """
+    Calculate per-skill match scores between a resume and JD skills.
+    
+    Returns:
+        dict: {skill_name: score (0-100)}
+    """
+    resume_lower = resume_text.lower()
+    skill_scores = {}
+    
+    for skill in jd_skills:
+        skill_lower = skill.lower()
+        if skill_lower in resume_lower:
+            count = resume_lower.count(skill_lower)
+            # Base score 65 + up to 30 for frequency, cap at 98
+            score = min(65 + count * 7, 98)
+            # Boost for multi-word matches (more specific)
+            if ' ' in skill_lower:
+                score = min(score + 5, 98)
+            skill_scores[skill] = score
+        else:
+            skill_scores[skill] = 0
+    
+    return skill_scores
+
+
+def identify_skills_gap(resume_text, jd_skills):
+    """
+    Find skills required in JD but missing from the resume.
+    """
+    resume_lower = resume_text.lower()
+    missing = []
+    
+    for skill in jd_skills:
+        if skill.lower() not in resume_lower:
+            missing.append(skill)
+    
+    return missing
+
+
+def calculate_experience_match(resume_text, jd_text):
+    """
+    Compare experience years between resume and JD.
+    Returns a percentage match score.
+    """
+    import re
+    
+    # Extract years from JD
+    jd_years = extract_experience_years(jd_text)
+    
+    # Extract years mentioned in resume
+    resume_lower = resume_text.lower()
+    year_patterns = [
+        r'(\d+)\s*[-–to]+\s*(\d+)\s*(?:\+)?\s*(?:years?|yrs?)',
+        r'(\d+)\+?\s*(?:years?|yrs?)\s*(?:of)?\s*(?:experience|exp)?',
+    ]
+    
+    max_resume_years = 0
+    for pattern in year_patterns:
+        matches = re.findall(pattern, resume_lower)
+        for match in matches:
+            if isinstance(match, tuple):
+                for m in match:
+                    if m:
+                        try:
+                            max_resume_years = max(max_resume_years, int(m))
+                        except ValueError:
+                            pass
+            else:
+                try:
+                    max_resume_years = max(max_resume_years, int(match))
+                except ValueError:
+                    pass
+    
+    # Parse JD requirement
+    jd_min = 0
+    jd_match = re.search(r'(\d+)', jd_years)
+    if jd_match:
+        jd_min = int(jd_match.group(1))
+    
+    if jd_min == 0:
+        return 80  # Default if no requirement specified
+    
+    if max_resume_years >= jd_min:
+        return min(75 + (max_resume_years - jd_min) * 5, 98)
+    elif max_resume_years > 0:
+        return max(int((max_resume_years / jd_min) * 80), 30)
+    else:
+        return 55  # Can't determine
+
+
+def generate_detailed_report(results, jd_text):
+    """
+    Generate text-based analysis insights and recommendations.
+    """
+    if not results:
+        return [], []
+    
+    job_role = extract_job_role(jd_text)
+    insights = []
+    recommendations = []
+    
+    # Sort by score
+    sorted_results = sorted(results, key=lambda x: x.get('score', 0), reverse=True)
+    
+    # Best candidate insight
+    best = sorted_results[0]
+    best_keywords = best.get('matched_keywords', [])[:3]
+    kw_str = ', '.join(best_keywords) if best_keywords else 'relevant skills'
+    insights.append(
+        f"{best['resume_name']} is the best match with strong experience in {kw_str}."
+    )
+    
+    # Second candidate
+    if len(sorted_results) > 1:
+        second = sorted_results[1]
+        sec_kw = second.get('matched_keywords', [])[:2]
+        sec_str = ' and '.join(sec_kw) if sec_kw else 'relevant areas'
+        insights.append(
+            f"{second['resume_name']} shows good skills in {sec_str}."
+        )
+    
+    # Weaker candidates
+    for r in sorted_results[2:]:
+        if r['score'] >= 60:
+            insights.append(
+                f"{r['resume_name']} has relevant experience but lacks some key technical skills."
+            )
+        else:
+            insights.append(
+                f"{r['resume_name']} needs improvement in core {job_role.lower()} competencies."
+            )
+    
+    # Recommendations
+    top_count = sum(1 for r in sorted_results if r['score'] >= 70)
+    recommendations.append(f"Shortlist top {max(top_count, 1)} candidate{'s' if top_count != 1 else ''}")
+    recommendations.append("Consider skill gap for interview focus areas")
+    
+    # Find most common missing skills
+    all_missing = []
+    for r in sorted_results:
+        all_missing.extend(r.get('missing_keywords', []))
+    if all_missing:
+        from collections import Counter
+        common_gaps = Counter(all_missing).most_common(2)
+        for skill, _ in common_gaps:
+            recommendations.append(f"Focus on {skill.lower()} in interviews")
+    
+    recommendations.append("Verify practical experience in person")
+    
+    return insights, recommendations[:5]
+
+
+def analyze_resume_enhanced(resume_text, jd_text, resume_name, jd_skills):
+    """
+    Enhanced single resume analysis with detailed metrics for dashboard.
+    """
+    base = analyze_single_resume(resume_text, jd_text, resume_name)
+    if not base:
+        return None
+    
+    # Calculate individual skill scores
+    skill_scores = calculate_individual_skill_scores(resume_text, jd_skills)
+    
+    # Skills match percentage
+    matched_count = sum(1 for v in skill_scores.values() if v > 0)
+    skills_match = round((matched_count / len(jd_skills) * 100) if jd_skills else 0, 1)
+    
+    # Experience match
+    experience_match = calculate_experience_match(resume_text, jd_text)
+    
+    # Missing skills
+    missing = identify_skills_gap(resume_text, jd_skills)
+    
+    # Determine status
+    score = base['score']
+    if score >= 85:
+        status = 'Best Match'
+    elif score >= 70:
+        status = 'Shortlisted'
+    elif score >= 60:
+        status = 'Review'
+    elif score >= 50:
+        status = 'Consider'
+    else:
+        status = 'Not Matched'
+    
+    base.update({
+        'skills_match': round(skills_match, 1),
+        'experience_match': experience_match,
+        'skill_scores': {k: v for k, v in skill_scores.items() if v > 0},
+        'missing_keywords': missing[:8],
+        'status': status,
+    })
+    
+    return base
+
+
+def compare_resumes_enhanced(resumes_data, jd_text):
+    """
+    Enhanced multi-resume analysis returning all data needed for the dashboard.
+    """
+    jd_skills = get_jd_tech_skills(jd_text)
+    job_role = extract_job_role(jd_text)
+    experience_req = extract_experience_years(jd_text)
+    
+    results = []
+    for resume_name, resume_text in resumes_data:
+        result = analyze_resume_enhanced(resume_text, jd_text, resume_name, jd_skills)
+        if result:
+            results.append(result)
+    
+    results.sort(key=lambda x: x['score'], reverse=True)
+    
+    # Aggregate top strengths (most common matched keywords across all resumes)
+    from collections import Counter
+    all_keywords = []
+    for r in results:
+        all_keywords.extend(r.get('matched_keywords', []))
+    top_strengths = [kw for kw, _ in Counter(all_keywords).most_common(6)]
+    
+    # Detailed report
+    insights, recommendations = generate_detailed_report(results, jd_text)
+    
+    # Score distribution
+    above_80 = sum(1 for r in results if r['score'] >= 80)
+    between_60_79 = sum(1 for r in results if 60 <= r['score'] < 80)
+    below_60 = sum(1 for r in results if r['score'] < 60)
+    
+    return {
+        'success': True,
+        'job_role': job_role,
+        'experience_required': experience_req,
+        'total_jd_skills': len(jd_skills),
+        'jd_skills': jd_skills,
+        'results': results,
+        'total_resumes': len(results),
+        'top_strengths': top_strengths,
+        'insights': insights,
+        'recommendations': recommendations,
+        'score_distribution': {
+            'above_80': above_80,
+            'between_60_79': between_60_79,
+            'below_60': below_60,
+        }
+    }
+
